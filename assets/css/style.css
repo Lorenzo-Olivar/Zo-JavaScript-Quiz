@@ -1,0 +1,14 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #ffffff;
+}
+
+/* styling for the view highscore and timer */
+.nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav p {
+    margin: 15px;
+}
