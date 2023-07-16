@@ -11,4 +11,57 @@ body {
 
 .nav p {
     margin: 15px;
+    font-weight: bold;
+}
+
+/* styling for the quiz layout and font style */
+.quiz-outer {
+    display: flex;
+    justify-content: center;
+}
+
+.quiz-inner {
+    width: 80vw;
+    max-width: 600px;
+    margin: 100px;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.quiz-inner h1 {
+    font-size: 50px;
+    color: #000;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 100px;
+}
+
+.quiz h2 {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.btn {
+    background-color: #2bffe9;
+    color: black;
+    font-weight: bold;
+    font-size: 15px;
+    width: 100%;
+    border: 1px solid #2bffe9;
+    padding: 10px;
+    margin: 5px 0;
+    text-align: left;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.125s;
+}
+
+.btn:hover {
+    transition: all 0.125s;
+    padding: 20px 10px;
+}
+
+.btn:hover::after {
+    content: "\a0 ⤎";
 }
