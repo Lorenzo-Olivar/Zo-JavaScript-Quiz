@@ -65,3 +65,18 @@ body {
 .btn:hover::after {
     content: "\a0 ⤎";
 }
+
+/* next button */
+
+#nextbutton {
+    background-color: #000;
+    color: white;
+    border: 1px solid black;
+    float: right;
+    padding: 6px 12px;
+    border-radius: 12px;
+    margin-top: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    display: none;
+}
