@@ -57,14 +57,11 @@ body {
     transition: all 0.125s;
 }
 
-.btn:hover {
+.btn:hover:not([disabled]) {
     transition: all 0.125s;
     padding: 20px 10px;
 }
 
-.btn:hover::after {
-    content: "\a0 ⤎";
-}
 
 /* next button */
 
@@ -77,6 +74,36 @@ body {
     border-radius: 12px;
     margin-top: 20px;
     font-weight: bold;
+    cursor: pointer;
+    display: none;
+}
+
+/* style for the correct and incorrect answers after they are selected */
+#correct {
+    background-color: rgba(0, 173, 0, 0.5);
+}
+
+#incorrect {
+    background-color: rgba(255, 0, 0, 0.541);
+} 
+
+/* styling for the form elements */
+
+#initials {
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 10px;
+    display: none;
+}
+
+#saveScoreBtn {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    font-size: 13px;
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 10px;
     cursor: pointer;
     display: none;
 }
