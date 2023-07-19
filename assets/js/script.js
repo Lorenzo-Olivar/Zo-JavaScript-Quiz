@@ -1,3 +1,19 @@
+// starts the quiz
+var startButtonEl = document.getElementById("startButton");
+var startParagraphEl = document.getElementById("startingScreen");
+var startQuiz = function() {
+    startParagraphEl.setAttribute("style", 'display: none;');
+    startButtonEl.setAttribute("style", 'display: none;');
+    countdown();
+    commenceQuiz();
+}
+
+startButtonEl.addEventListener('click', startQuiz)
+
+
+
+
+
 // Timer code
 var timer = document.querySelector(".timer");
 var secondsLeft = 0;
@@ -16,7 +32,7 @@ var countdown = function() {
         }
     }, 1000);
 };
-countdown();
+// countdown();
 
 // Quiz questions
 var questionsList = [
@@ -33,8 +49,8 @@ var questionsList = [
         question: "The condition in an if / else statement is enclosed within ______.",
         answer: [
             {text: "Quotes", correct: false},
-            {text: "Curly Brackets", correct: false},
-            {text: "Parentheses", correct: true},
+            {text: "Curly Brackets", correct: true},
+            {text: "Parentheses", correct: false},
             {text: "Square Brackets", correct: false},
         ]
     },
@@ -43,8 +59,8 @@ var questionsList = [
         answer: [
             {text: "Numbers and Strings", correct: false},
             {text: "Other Arrays", correct: false},
-            {text: "Booleans", correct: true},
-            {text: "All of the Above", correct: false},
+            {text: "Booleans", correct: false},
+            {text: "All of the Above", correct: true},
         ]
     },
     {
@@ -61,8 +77,8 @@ var questionsList = [
         answer: [
             {text: "JavaScript", correct: false},
             {text: "Terminal / Bash", correct: false},
-            {text: "For Loops", correct: true},
-            {text: "Console.log", correct: false},
+            {text: "For Loops", correct: false},
+            {text: "Console.log", correct: true},
         ]
     },
 ];
@@ -76,7 +92,7 @@ var currentQuestionIndex = 0;
 var score = 0;
 
 // starts the quiz with the first set of questions
-var startQuiz = function () {
+var commenceQuiz = function () {
     currentQuestionIndex = 0;
     score = 0;
     nextButton.textContent = "Next";
@@ -101,7 +117,7 @@ var selectAnswer = function(event) {
         score = score++ + secondsLeft;
     } else {
         selectedBtn.setAttribute("id", "incorrect");
-        secondsLeft = secondsLeft - 5;
+        secondsLeft = secondsLeft - 10;
     };
     Array.from(answerButton.children).forEach (answerItem => {
         if (answerItem.dataset.correct === "true") {
@@ -154,7 +170,7 @@ var cycleQuestion = function() {
 
 nextButton.addEventListener('click', cycleQuestion)
 
-startQuiz();
+// commenceQuiz();
 
 // saves the current highscore
 var saveHighScore = function(event) {
@@ -172,13 +188,43 @@ var saveHighScore = function(event) {
     highScores.splice(5);
 
     localStorage.setItem('highscores', JSON.stringify(highScores));
-}
 
-var highScores = JSON.parse(localStorage.getItem("highscores")) || [];
+    showHighScores();
+
+};
 
 var highScoresList = document.getElementById('highScoresList');
+var highScores = JSON.parse(localStorage.getItem("highscores")) || [];
+var restartQuiz = document.getElementById('restart')
 
+// makes the 5 highest scores visable
+var showHighScores = function() {
 
+    for (let i = 0; i < highScores.length; i++) {
+        var scoreList = document.createElement('li');
+        scoreList.textContent = 'Player: ' + highScores[i].initials + ' | Score: ' + highScores[i].score;
+        scoreList.setAttribute('class', 'scoreListings');
+        highScoresList.appendChild(scoreList);
+        scoreList.style.display = 'block';
+        saveScoreBtn.style.display = "none";
+        saveInitials.style.display = "none";
+        restartQuiz.style.display = "block";
+    };
+
+};
+
+var altViewHighcores = document.getElementById("viewHighscores");
+
+var showViewHighscores = function() {
+    startParagraphEl.setAttribute("style", 'display: none;');
+    startButtonEl.setAttribute("style", 'display: none;');
+    showHighScores();
+    resetQuestion();
+    questionEl.style.display = "none";
+    altViewHighcores.style.visibility = "hidden";
+    secondsLeft = 0;
+}
+altViewHighcores.addEventListener('click', showViewHighscores);
 
 // console.log(secondsLeft - 5)
 // console.log(currentQuestionIndex)

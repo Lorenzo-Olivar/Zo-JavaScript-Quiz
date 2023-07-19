@@ -55,6 +55,7 @@ body {
     border-radius: 15px;
     cursor: pointer;
     transition: all 0.125s;
+    list-style: none;
 }
 
 .btn:hover:not([disabled]) {
@@ -105,5 +106,57 @@ body {
     padding: 5px;
     border-radius: 10px;
     cursor: pointer;
+    display: none;
+}
+
+/* style for the Highscores */
+.scoreListings {
+    background-color: #000;
+    color: white;
+    border: 1px solid black;
+    padding: 10px 12px;
+    border-radius: 12px;
+    margin-top: 5px;
+    font-weight: bold;
+    list-style: none;
+    display: none;
+}
+
+#startingScreen {
+    text-align: center;
+    margin-top: -50px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#startButton {
+    background-color: #000;
+    color: white;
+    border: 1px solid black;
+    padding: 6px 12px;
+    border-radius: 12px;
+    margin-top: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 250px;
+}
+
+#viewHighscores {
+    cursor: pointer;
+    color: #000000;
+    text-decoration: underline;
+    visibility: visible;
+}
+
+#restart {
+    background-color: #000;
+    color: white;
+    border: 1px solid black;
+    padding: 6px 12px;
+    border-radius: 12px;
+    margin-top: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 250px;
     display: none;
 }
