@@ -10,7 +10,7 @@ So that I can quiz the user on their knowledge of JavaScript.
 
 ## Installation
 
-Proceed to this Link: https://lorenzo-olivar.github.io/Zo-JavaScript-Quiz/
+Proceed to this Link: [JavaScript Quiz](https://lorenzo-olivar.github.io/Zo-JavaScript-Quiz/)
 
 ## Usage
 
