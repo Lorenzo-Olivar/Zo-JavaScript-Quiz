@@ -14,29 +14,28 @@ Proceed to this Link:
 
 ## Usage
 
-Press Start to start the Quiz
+Click Start to start the Quiz
 
 ![Start Page](assets/images/SS1.png)
 
+Click on what you believe is the correct answer
+
 ![Start Page](assets/images/SS2.png)
+
+Type in your INITIALS and click SAVE
 
 ![Start Page](assets/images/SS3.png)
 
+You should be able to see your top 5 high scores
+
 ![Start Page](assets/images/SS4.png)
+
+Alternatively, you can click on view high scores to see your high scores if you have already logs a high score in
 
 ![Start Page](assets/images/SS5.png)
 
 
-## Credits
-
-List your collaborators, if any, with links to their GitHub profiles.
-
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
-
-If you followed tutorials, include links to those here as well.
-
 ## License
 
-The last section of a high-quality README file is the license. This lets other developers know what they can and cannot do with your project. If you need help choosing a license, refer to [https://choosealicense.com/](https://choosealicense.com/).
-
+MIT license
 ---
